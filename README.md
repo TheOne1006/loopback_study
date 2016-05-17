@@ -48,11 +48,24 @@ GITHUB:  <https://github.com/strongloop/loopback/>
 
 ### 用户登录
 
-1. `$ slc loopback:model`
+1. `$slc loopback:model`
 2. 选择继承`User`
 3. 在 `models/*.js` 中编写 函数方法,暴露方法
 4. 配置 `acl(权限控制)`
+5. 配置 `server/model-config.json`
+    - AccessToken, ACL ,RoleMapping, Role 对应的数据源
+6. 增加 mongodb 数据源 `$slc loopback:datasource`
+7. 配置 模型使用连接器 `server/model-config.json`
 
+> acl 配置案例
+```js
+{
+  "principalType" : "ROLE", // 权限
+  "principalId": "$everyone", // 所有人
+  "permission": "ALLOW", // 允许
+  "property": "sayHi" // 方法为 sayHi
+}
+```
 
 
 

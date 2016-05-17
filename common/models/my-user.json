@@ -18,7 +18,7 @@
   "relations": {},
   "acls": [
     {
-      "principalType" : "ROLE",
+      "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "sayHi"

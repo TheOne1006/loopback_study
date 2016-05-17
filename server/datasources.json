@@ -2,5 +2,10 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mongodb": {
+    "url": "mongodb://localhost:27017/loop",
+    "name": "mongodb",
+    "connector": "mongodb"
   }
 }
