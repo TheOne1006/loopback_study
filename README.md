@@ -30,6 +30,31 @@ GITHUB:  <https://github.com/strongloop/loopback/>
 5. 使用explorer 与 swagger
 
 
+
+### 目录结构
+
+```
+
+|- client/ 客户端相关
+|- common/ 公共的
+|  |- models/ 模型信息
+|  |- xxx.js  模型方法，暴漏方式
+|  |- xxx.json 模型相关的权限验证, 配置信息
+|
+|- server/ 服务相关文件
+|  |- boot/*.js 启动加载文件
+|  |- component-config.json 组件配置
+|  |- config.json
+|  |- datasources.json 连接器，数据源配置
+|  |- middleware.json
+|  |- model-config.json 模型设置
+|  |- server.js 启动文件
+|- self/ 个人学习
+|
+|- .* yeoman 生成
+```
+
+
 ### 数据模型与数据源
 
 1. 创建数据模型(model)
