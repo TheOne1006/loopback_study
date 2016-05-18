@@ -1,5 +1,11 @@
 {
   "loopback-component-explorer": {
     "mountPath": "/explorer"
+  },
+  "loopback-component-oauth2": {
+    "dataSource": "db",
+    "loginPage": "/login",
+    "loginPath": "/auth/login",
+    "addHttpHeaders": "X-"
   }
 }

@@ -1,0 +1,14 @@
+{
+  "name": "myappliction",
+  "plural": "/appliction",
+  "base": "Application",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

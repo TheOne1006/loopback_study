@@ -36,5 +36,13 @@
   "Role": {
     "dataSource": "mongodb",
     "public": false
+  },
+  "myappliction": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Application": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }
