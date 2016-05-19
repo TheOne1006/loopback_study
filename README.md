@@ -3,6 +3,9 @@
 GITHUB:  <https://github.com/strongloop/loopback/>
 文档: <http://apidocs.strongloop.com/loopback/>
 
+Tutorials and examples: <https://docs.strongloop.com/display/public/LB/Tutorials+and+examples>
+
+
 ### 知识点
 
 1. loopback 与 express 的关系?
@@ -30,6 +33,76 @@ GITHUB:  <https://github.com/strongloop/loopback/>
 5. 使用explorer 与 swagger
 
 
+### core concepts 核心概念
+
+__!important 理解 loopback 是如何工作的__  
+
+1. Models
+2. Application logic
+3. Data sources and connectors
+4. LoopBack components
+5. Examples
+
+> Models
+
+>> Model 是 loopback 的心脏,代表后端数据源，如数据库或其他后端服务。  
+
+loopback的model 用js的 object 方式表示。  
+
+loopback 能够通过配置,帮你定义一些model相关的增删改查并暴漏到 rest 层  
+
+Basic model object(基础model对象), 能够添加 hooks 去验证数据。
+而其他的model 都会继承与它.  
+
+当你把一个model attach(附属) 到 dataSource 上, 它会变成一个 connected model(连接model),并赋予 创建，取回，更新和删除的操作  
+
+loopback 的 built-in models 就是继承与它  
+
+
+继承关系如下图:
+
+![Model inheritance ](https://docs.strongloop.com/download/attachments/9634357/Model%20inheritance.png?version=1&modificationDate=1456428606000&api=v2)
+
+字符图
+```
+```
+
+##### __Built-in models__
+
+LoopBack应用都内置了一些 built-in model如
+
+1. User
+2. Role
+3. Application
+4. ACL
+5.
+6.
+
+
+
+
+##### Custom models(自定义model)
+
+你可以在你的appliction 中自定义model,也可以扩展 built-in model ( User, Application,... )实现你想要的功能.  
+可以通过以下几个方法创建 LoopBack models, 根据使用哪种 dataSource
+
+1. 使用loopback 的 model 手脚架 (`$slc loopback:model`)
+2. 从现有的数据库关系中,
+3. By instance introspection ??
+
+以上三种方法都会都会创建一个 model相关的json文件( Model definition JSON file),用于定义模型在的使用。目录为`common/models`  
+
+你也可以创建各种model 方法，或者手动编辑json 文件  
+
+有一个 `"idInjection": false,`  // 表示是否有主键设置  
+
+Model relations:表示model 的依赖关系,例如  BelongsTo, HasMany, and HasAndBelongsToMany.  
+
+在model 连接到一个 dataSource 会变成一个 `connected model`, 又有 create, read, update, and delete 操作来自 `Class:PersistedModel`  
+
+
+
+
 
 ### 目录结构
 
@@ -46,7 +119,7 @@ GITHUB:  <https://github.com/strongloop/loopback/>
 |  |- component-config.json 组件配置
 |  |- config.json
 |  |- datasources.json 连接器，数据源配置
-|  |- middleware.json
+|  |- middleware.json   中间件配置
 |  |- model-config.json 模型设置
 |  |- server.js 启动文件
 |- self/ 个人学习
@@ -70,6 +143,54 @@ GITHUB:  <https://github.com/strongloop/loopback/>
     2. datasources.staging.json
     3. datasources.production.json
     4. 优先使用 datasources.json 再加载 env 指定的配置
+
+### 中间件配置 middleware.json
+基本demo
+```js
+{
+  // 触发时机: 初始化前
+  "initial:before": {
+    /**
+     * 申明使用 loopback 的 middeware favicon
+     * <root>/node_modules/loopback/server/middleware/favicon.js
+     * 并且不适用任何参数
+     */
+    "loopback#favicon": {}
+  },
+  "initial": {
+    "compression": {}
+  },
+  "session": {
+  },
+  "auth": {
+  },
+  "parse": {
+  },
+  "routes": {
+     // rest 移除 /api 是在哪一步完成的
+     "loopback#rest": {
+      "paths": ["${restApiRoot}"]
+    }
+  },
+  "files": {
+    "loopback#static": {
+      "params": "$!../client"
+    }
+  },
+  "final": {
+    "loopback#urlNotFound": {}
+  },
+  "final:after": {
+    "errorhandler": {}
+  }
+}
+```
+
+
+
+
+
+
 
 ### 用户登录
 
