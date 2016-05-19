@@ -41,6 +41,7 @@ __!important 理解 loopback 是如何工作的__
 2. Application logic
 3. Data sources and connectors
 4. LoopBack components
+5. Examples
 
 #### Models
 
@@ -135,7 +136,22 @@ loopback 提供一些而外的扩展功能:
 4. Synchronization: 同步, mobile 操作同步
 5. OAuth 2.0: 使得服务器能够提供 oauth2 服务
 
+#### Examples(案例以及需要掌握的知识点)
 
+
+1. [loopback-getting-started](https://github.com/strongloop/loopback-getting-started)
+    - Prerequisites(先决条件): core concepts
+    - 一步步创建 looback 应用
+    - 里面有对应的tag,对应不同的步骤教程
+    - 你可以学到
+        1. 创建一个简易的api 服务器
+        2. 使用API Explorer
+        3. 链接api 到 dataSource
+        4. 扩展api
+        5. 如何添加一个静态页面
+        6. 自定义一个express 的 router
+        7.
+2. [loopback-getting-started-intermediate](https://github.com/strongloop/loopback-getting-started-intermediate)
 
 
 
