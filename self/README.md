@@ -20,5 +20,5 @@
 
 ```
 |- Appliction/ (Class: LoopBackApplication)
-|
+|- loopback/ (Class: loopback)
 ```
