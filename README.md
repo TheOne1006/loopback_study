@@ -150,8 +150,14 @@ loopback 提供一些而外的扩展功能:
         4. 扩展api
         5. 如何添加一个静态页面
         6. 自定义一个express 的 router
-        7.
 2. [loopback-getting-started-intermediate](https://github.com/strongloop/loopback-getting-started-intermediate)
+    - 在 loopback-getting-started 基础之上深入
+    - 可以学到
+        1. 在单一应用程序中使用多个数据源
+        2. 模型之间的关系
+        3. 使用访问控制列表来保护REST端点
+        4. 用户注册和认证
+        5. 使用AngularJS SDK
 
 
 
