@@ -1,5 +1,11 @@
-## 填充
-
+## 目标
+- 在 loopback-getting-started 基础之上深入
+- 可以学到
+    1. 在单一应用程序中使用多个数据源
+    2. 模型之间的关系
+    3. 使用访问控制列表来保护REST端点
+    4. 用户注册和认证
+    5. 使用AngularJS SDK
 
 ### Coffee Shop Reviews(coffee 商店评论)
 该 app 拥有两种不同的 数据源, coffce shop 存在 MySql 中, 评论用户,和评论内容 存在 mongodb 中.  
