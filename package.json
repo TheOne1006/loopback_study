@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "async": "^2.0.0-rc.5",
+    "bcrypt": "^0.8.6",
     "compression": "^1.6.2",
     "cors": "^2.5.2",
     "debug": "^2.2.0",

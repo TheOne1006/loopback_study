@@ -24,5 +24,6 @@
       "property": "sayHi"
     }
   ],
+  "hidden": false,
   "methods": {}
 }
