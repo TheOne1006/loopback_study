@@ -118,5 +118,27 @@ Review 权限控制 访问控制应遵守以下规则:
   ],
 ```
 
+### angular 的 sdk
+
+- 介绍 AngularJS SDK
+- 生成 lb-services.js
+- 拷贝文件
+
+#### 接受 ng sdk
+
+#### 构建 lb-services.js
+
+创建命令
+```bash
+lb-ng server/server.js client/js/services/lb-services.js
+```
+
+
+
+
+
+
+
+
 
 - - -
