@@ -8,6 +8,11 @@ module.exports = function(MyUser) {
     cb(null, 'hi');
   };
 
+  // 定义自己的 加密方式
+  MyUser.hashPassword = function (plain) {
+    return plain;
+  };
+
   /**
    * remote method
    * 怎么暴露给http
