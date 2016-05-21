@@ -4,7 +4,9 @@
   "base": "User",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": true,
+    "realmRequired": true,
+    "realmDelimiter": ":"
   },
   "properties": {
     "fullname": {
@@ -15,7 +17,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "myappliction": {
+      "type": "hasMany",
+      "model": "Myappliction",
+      "foreignKey": "owner"
+    }
+  },
   "acls": [
     {
       "principalType": "ROLE",

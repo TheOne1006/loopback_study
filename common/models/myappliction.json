@@ -8,7 +8,8 @@
   },
   "properties": {},
   "validations": [],
-  "relations": {},
+  "relations": {
+  },
   "acls": [],
   "methods": {}
 }

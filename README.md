@@ -5,6 +5,7 @@ GITHUB:  <https://github.com/strongloop/loopback/>
 
 Tutorials and examples: <https://docs.strongloop.com/display/public/LB/Tutorials+and+examples>
 
+中文教程:<https://docs.strongloop.com/display/zh/LoopBack>
 
 ### 知识点
 
@@ -35,7 +36,7 @@ Tutorials and examples: <https://docs.strongloop.com/display/public/LB/Tutorials
 
 ### core concepts 核心概念
 
-__!important 理解 loopback 是如何工作的__  
+__!important 理解 loopback 是如何工作的__
 
 1. Models
 2. Application logic
@@ -45,18 +46,18 @@ __!important 理解 loopback 是如何工作的__
 
 #### Models
 
-> Model 是 loopback 的心脏,代表后端数据源，如数据库或其他后端服务。  
+> Model 是 loopback 的心脏,代表后端数据源，如数据库或其他后端服务。
 
-loopback的model 用js的 object 方式表示。  
+loopback的model 用js的 object 方式表示。
 
-loopback 能够通过配置,帮你定义一些model相关的增删改查并暴漏到 rest 层  
+loopback 能够通过配置,帮你定义一些model相关的增删改查并暴漏到 rest 层
 
 Basic model object(基础model对象), 能够添加 hooks 去验证数据。
-而其他的model 都会继承与它.  
+而其他的model 都会继承与它.
 
-当你把一个model attach(附属) 到 dataSource 上, 它会变成一个 connected model(连接model),并赋予 创建，取回，更新和删除的操作  
+当你把一个model attach(附属) 到 dataSource 上, 它会变成一个 connected model(连接model),并赋予 创建，取回，更新和删除的操作
 
-loopback 的 built-in models 就是继承与它  
+loopback 的 built-in models 就是继承与它
 
 
 继承关系如下图:
@@ -80,27 +81,27 @@ LoopBack应用都内置了一些 built-in model如
 
 > Custom models(自定义model)
 
-你可以在你的appliction 中自定义model,也可以扩展 built-in model ( User, Application,... )实现你想要的功能.  
+你可以在你的appliction 中自定义model,也可以扩展 built-in model ( User, Application,... )实现你想要的功能.
 可以通过以下几个方法创建 LoopBack models, 根据使用哪种 dataSource
 
 1. 使用loopback 的 model 手脚架 (`$slc loopback:model`)
 2. 从现有的数据库关系中,
 3. By instance introspection ??
 
-以上三种方法都会都会创建一个 model相关的json文件( Model definition JSON file),用于定义模型在的使用。目录为`common/models`  
+以上三种方法都会都会创建一个 model相关的json文件( Model definition JSON file),用于定义模型在的使用。目录为`common/models`
 
-你也可以创建各种model 方法，或者手动编辑json 文件  
+你也可以创建各种model 方法，或者手动编辑json 文件
 
-有一个 `"idInjection": false,`  // 表示是否有主键设置  
+有一个 `"idInjection": false,`  // 表示是否有主键设置
 
-Model relations:表示model 的依赖关系,例如  BelongsTo, HasMany, and HasAndBelongsToMany.  
+Model relations:表示model 的依赖关系,例如  BelongsTo, HasMany, and HasAndBelongsToMany.
 
-在model 连接到一个 dataSource 会变成一个 `connected model`, 又有 create, read, update, and delete 操作来自 `Class:PersistedModel`  
+在model 连接到一个 dataSource 会变成一个 `connected model`, 又有 create, read, update, and delete 操作来自 `Class:PersistedModel`
 
 
 #### Application logic 应用逻辑
 
-通过以下几个方式添加逻辑代码:  
+通过以下几个方式添加逻辑代码:
 
 1. 通过remote methods (custom REST endpoints), 在 remote hooks 触发的函中,以及 model 的触发hooks 中,如 `create, save, delete`
 2. 添加boot scripts 在应用开始执行时
@@ -108,17 +109,17 @@ Model relations:表示model 的依赖关系,例如  BelongsTo, HasMany, and HasA
 
 > Middleware phases 中间件阶段
 
-中间件根据 HTTP 请求到 REST 不同的执行阶段划分, 基于 Express,  
+中间件根据 HTTP 请求到 REST 不同的执行阶段划分, 基于 Express,
 
-1. loopback 的中间件也可以像 Express 那样使用  
-2. loopback 对中间件引入了 `phases`(阶段)的概念,明确的定义了触发顺序  
+1. loopback 的中间件也可以像 Express 那样使用
+2. loopback 对中间件引入了 `phases`(阶段)的概念,明确的定义了触发顺序
 3. 作用避免了,执行顺序错误导致的问题
 
 
 #### Data sources and connectors(数据源与连接器)
 
-loopback 包括后端服务,像一个数据库。像存储服务一样的使用。  
-数据源通过连接器，然后直接与数据库或其他后端服务进行通信的支持  
+loopback 包括后端服务,像一个数据库。像存储服务一样的使用。
+数据源通过连接器，然后直接与数据库或其他后端服务进行通信的支持
 使得应用不用在意连接器信息，
 
 
@@ -128,7 +129,7 @@ loopback 包括后端服务,像一个数据库。像存储服务一样的使用�
 
 #### LoopBack components(组件)
 
-loopback 提供一些而外的扩展功能:  
+loopback 提供一些而外的扩展功能:
 
 1. Push notifications : 推送服务, mobile 系列
 2. Storage service: 存储服务,上传下载文件,从云端供应商获取文件如同本地
